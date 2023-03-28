@@ -1,0 +1,118 @@
+.create--container {
+    width: 100%;
+    position: relative;
+    padding: 2rem;
+    background-color: var(--palette-color-two);
+    color: #fff;
+}
+
+.create--box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.create--title {
+    font-size: var(--header-subtitle);
+}
+
+.create--selectState {
+    width: 100%;
+    margin: 2.5rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.selectState--common {
+    margin-right: 2rem;
+}
+
+.selectState--common h3,
+.selectState--special h3 {
+    font-size: var(--article-title);
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.selectState--common ul,
+.selectState--special ul {
+    display: flex;
+}
+
+.selectState--common ul li,
+.selectState--special ul li {
+    width: 2.6rem;
+    height: 2.6rem;
+    background-color: #fff;
+    border-radius: 50%;
+    color: #000;
+    font-size: var(--normal-text);
+    text-align: center;
+    line-height: 1.8;
+}
+
+.selectState--common ul li:not(:last-child),
+.selectState--special ul li:not(:last-child) {
+    margin-right: 0.4rem;
+}
+
+.create--numOfGame {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.numOfGame--title {
+    font-size: var(--article-title);
+    margin-bottom: 1.5rem;
+}
+
+.numOfGame--selectNum {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    margin-bottom: 1.5rem;
+}
+
+.numOfGame--selectNum .numOfGameNum {
+    width: 2.6rem;
+    height: 2.6rem;
+    background-color: #fff;
+    border-radius: 50%;
+    color: #000;
+    font-size: var(--normal-text);
+    text-align: center;
+    line-height: 1.8;
+    margin-bottom: 0.4rem;
+}
+
+.numOfGame--selectNum .numOfGameNum:not(:last-child) {
+    margin-right: 0.4rem;
+}
+
+.create--btn {
+    font-size: var(--normal-text);
+    background-color: #fff;
+    outline: none;
+    border: 0;
+    border-radius: 0.5rem;
+    letter-spacing: 1.25;
+    width: 21rem;
+    height: 2.8rem;
+}
+
+.create--question {
+    position: absolute;
+    right: 3rem;
+    top: 2.5rem;
+    width: 2.6rem;
+    height: 2.6rem;
+    background-color: #fff;
+    border-radius: 50%;
+    color: #000;
+    font-size: var(--normal-text);
+    text-align: center;
+    line-height: 1.8;
+}

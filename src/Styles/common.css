@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+:root {
+    /* Main color */
+    --palette-color-one: #112d4e;
+    --palette-color-two: #0f4c75;
+    --palette-color-three: #3282b8;
+    --palette-color-four: #bbe1fa;
+
+    /* Lotto color */
+    --color-ten: #fbc400;
+    --color-twenty: #69c8f2;
+    --color-thirty: #ff7272;
+    --color-forty: #aaaaaa;
+    --color-forty-five: #b0d840;
+
+    /* Font size */
+    --header-title: 4.8rem;
+    --header-subtitle: 2.4rem;
+    --article-title: 1.6rem;
+    --normal-text: 1.4rem;
+    --annotation-text: 1.2rem;
+
+    /* Font family */
+    --font-family: 'Noto Sans KR', sans-serif;
+
+    /* Margin */
+    --outer-margin: 2rem;
+    --inner-margin: 1.5rem;
+}

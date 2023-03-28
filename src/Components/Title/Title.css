@@ -1,0 +1,10 @@
+.header {
+    width: 100%;
+    text-align: center;
+}
+
+.header--title {
+    font-size: var(--header-title);
+    background: linear-gradient(#fff, var(--palette-color-four));
+    font-style: italic;
+}

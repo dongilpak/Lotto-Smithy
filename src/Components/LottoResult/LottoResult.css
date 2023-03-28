@@ -1,0 +1,95 @@
+.result--container {
+    width: 100%;
+    position: relative;
+    padding: 2rem;
+    background-color: var(--palette-color-three);
+    color: #fff;
+}
+
+.result--box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.result--title {
+    font-size: var(--header-subtitle);
+    letter-spacing: 0.1rem;
+}
+
+.result--date {
+    font-size: var(--article-title);
+}
+
+.result--num {
+    display: flex;
+    margin-top: 3rem;
+}
+
+.result--num li:not(:last-child) {
+    margin-right: 0.4rem;
+}
+
+.num--ball {
+    border-radius: 50%;
+    font-size: var(--normal-text);
+    width: 2.6rem;
+    height: 2.6rem;
+    text-align: center;
+    line-height: 1.8;
+}
+
+.num--ball-one {
+    background-color: var(--color-ten);
+}
+
+.num--ball-two {
+    background-color: var(--color-twenty);
+}
+.num--ball-three {
+    background-color: var(--color-forty);
+}
+
+.num--ball-four {
+    background-color: var(--color-forty);
+}
+
+.num--ball-five {
+    background-color: var(--color-forty);
+}
+
+.num--ball-six {
+    background-color: var(--color-forty-five);
+}
+
+.num--ball-bonus {
+    background-color: var(--color-twenty);
+}
+
+.num--plus {
+    display: flex;
+    align-items: center;
+}
+
+.result--control {
+    position: absolute;
+    top: 5rem;
+}
+
+.result--control svg:hover {
+    cursor: pointer;
+}
+
+.result--control.result--control-right {
+    right: 0;
+}
+
+.result--control.result--control-left {
+    left: 0;
+}
+
+.result--control .css-i4bv87-MuiSvgIcon-root {
+    width: 5.2rem;
+    height: 5.2rem;
+}
