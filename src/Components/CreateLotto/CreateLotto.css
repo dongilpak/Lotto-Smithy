@@ -72,6 +72,7 @@
 .numOfGame--selectNum {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     width: 50%;
     margin-bottom: 1.5rem;
 }
@@ -85,11 +86,7 @@
     font-size: var(--normal-text);
     text-align: center;
     line-height: 1.8;
-    margin-bottom: 0.4rem;
-}
-
-.numOfGame--selectNum .numOfGameNum:not(:last-child) {
-    margin-right: 0.4rem;
+    margin: 0 0.2rem 0.4rem 0.2rem;
 }
 
 .create--btn {

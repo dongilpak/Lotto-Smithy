@@ -1,7 +1,9 @@
 import React from 'react';
 import './App.css';
 import CreateLotto from './Components/CreateLotto/CreateLotto';
+import ListOfLotto from './Components/ListOfLotto/ListOfLotto';
 import LottoResult from './Components/LottoResult/LottoResult';
+import Suggestion from './Components/Suggestion/Suggestion';
 import Title from './Components/Title/Title';
 
 const App = () => {
@@ -10,6 +12,8 @@ const App = () => {
             <Title />
             <LottoResult />
             <CreateLotto />
+            <ListOfLotto />
+            <Suggestion />
         </div>
     );
 };

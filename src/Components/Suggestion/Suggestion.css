@@ -1,0 +1,70 @@
+.suggestion--container {
+    width: 100%;
+    padding: 2rem;
+    background-color: var(--palette-color-one);
+    color: #fff;
+}
+
+.suggestion--box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.suggestion--title {
+    font-size: var(--header-subtitle);
+    margin-bottom: 1.5rem;
+}
+
+.suggestion--lotto-ball {
+    display: flex;
+    margin-bottom: 1.5rem;
+}
+
+.suggestion--lotto-ball li {
+    margin: 0 0.2rem;
+}
+
+.suggestion--ball {
+    border-radius: 50%;
+    font-size: var(--normal-text);
+    width: 2.6rem;
+    height: 2.6rem;
+    text-align: center;
+    line-height: 1.8;
+}
+
+.suggestion--ball-one {
+    background-color: var(--color-ten);
+}
+
+.suggestion--ball-two {
+    background-color: var(--color-twenty);
+}
+.suggestion--ball-three {
+    background-color: var(--color-forty);
+}
+
+.suggestion--ball-four {
+    background-color: var(--color-forty);
+}
+
+.suggestion--ball-five {
+    background-color: var(--color-forty);
+}
+
+.suggestion--ball-six {
+    background-color: var(--color-forty-five);
+}
+
+.refresh--btn {
+    font-size: var(--normal-text);
+    background-color: #fff;
+    outline: none;
+    border: 0;
+    border-radius: 0.5rem;
+    letter-spacing: 1.25;
+    width: 21rem;
+    height: 2.8rem;
+}
