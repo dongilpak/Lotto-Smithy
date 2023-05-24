@@ -40,33 +40,6 @@
     line-height: 1.8;
 }
 
-.num--ball-one {
-    background-color: var(--color-ten);
-}
-
-.num--ball-two {
-    background-color: var(--color-twenty);
-}
-.num--ball-three {
-    background-color: var(--color-forty);
-}
-
-.num--ball-four {
-    background-color: var(--color-forty);
-}
-
-.num--ball-five {
-    background-color: var(--color-forty);
-}
-
-.num--ball-six {
-    background-color: var(--color-forty-five);
-}
-
-.num--ball-bonus {
-    background-color: var(--color-twenty);
-}
-
 .num--plus {
     display: flex;
     align-items: center;

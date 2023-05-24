@@ -57,6 +57,58 @@
     margin-right: 0.4rem;
 }
 
+.commonNum label:hover,
+.specialNum label:hover {
+    cursor: pointer;
+}
+
+.selectState--common .common--selectNum .commonNum input[type='checkbox'],
+.selectState--special .special--selectNum .specialNum input[type='checkbox'] {
+    display: none;
+}
+
+.selectState--common .common--selectNum .commonNum label,
+.selectState--special .special--selectNum .specialNum label {
+    display: inline-block;
+    width: 2.6rem;
+    height: 2.6rem;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.selectState--common
+    .common--selectNum
+    .commonNum
+    input[type='checkbox']:checked
+    + label,
+.selectState--special
+    .special--selectNum
+    .specialNum
+    input[type='checkbox']:checked
+    + label {
+    display: inline-block;
+    width: 2.6rem;
+    height: 2.6rem;
+    color: #fff;
+    border-radius: 50%;
+}
+
+.selectState--common
+    .common--selectNum
+    .commonNum
+    input[type='checkbox']:checked
+    + label {
+    background-color: var(--color-ten);
+}
+
+.selectState--special
+    .special--selectNum
+    .specialNum
+    input[type='checkbox']:checked
+    + label {
+    background-color: var(--color-thirty);
+}
+
 .create--numOfGame {
     width: 100%;
     display: flex;
@@ -69,7 +121,7 @@
     margin-bottom: 1.5rem;
 }
 
-.numOfGame--selectNum {
+.numOfGame--select {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -77,7 +129,7 @@
     margin-bottom: 1.5rem;
 }
 
-.numOfGame--selectNum .numOfGameNum {
+.numOfGame--select .numOfGame {
     width: 2.6rem;
     height: 2.6rem;
     background-color: #fff;
@@ -87,6 +139,32 @@
     text-align: center;
     line-height: 1.8;
     margin: 0 0.2rem 0.4rem 0.2rem;
+}
+
+.numOfGame label:hover {
+    cursor: pointer;
+}
+
+.numOfGame--select .numOfGame input[type='radio'] {
+    display: none;
+}
+
+.numOfGame--select .numOfGame label {
+    display: inline-block;
+    width: 2.6rem;
+    height: 2.6rem;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.numOfGame--select .numOfGame input[type='radio']:checked + label {
+    display: inline-block;
+    width: 2.6rem;
+    height: 2.6rem;
+    color: #fff;
+    border-radius: 50%;
+    border: 1px solid var(--color-forty-five);
+    background-color: var(--color-forty-five);
 }
 
 .create--btn {
@@ -100,16 +178,8 @@
     height: 2.8rem;
 }
 
-.create--question {
-    position: absolute;
-    right: 3rem;
-    top: 2.5rem;
-    width: 2.6rem;
-    height: 2.6rem;
-    background-color: #fff;
-    border-radius: 50%;
-    color: #000;
-    font-size: var(--normal-text);
-    text-align: center;
-    line-height: 1.8;
+.create--btn:hover {
+    cursor: pointer;
+    background-color: #000;
+    color: #fff;
 }

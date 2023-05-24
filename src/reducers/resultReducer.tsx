@@ -7,12 +7,11 @@ export const asyncGetResult = createAsyncThunk(
             `https://port-0-proxyserver-4jpolf2alg3hd2s1.sel3.cloudtype.app/result/${updateNum}`
         );
         const data = await resp.json();
-        console.log(data);
         return data;
     }
 );
 
-interface lottoObject {
+interface resultObject {
     value: {
         bnusNo: number;
         drwNo: number;
@@ -31,7 +30,7 @@ interface lottoObject {
     };
 }
 
-const initialState: lottoObject = {
+const initialState: resultObject = {
     value: {
         bnusNo: 0,
         drwNo: 0,
