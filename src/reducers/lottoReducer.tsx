@@ -1,12 +1,12 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 interface lottoObject {
-    value: {};
+    value: number[][];
     inventory: number[][];
 }
 
 const initialState: lottoObject = {
-    value: {},
+    value: [],
     inventory: [
         [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
         [11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
@@ -20,7 +20,9 @@ const lottoSlice = createSlice({
     name: 'lotto',
     initialState,
     reducers: {
-        getLogic: () => {},
+        getLogic: (state, action: PayloadAction<number[]>) => {
+            state.value.push(action.payload);
+        },
     },
 });
 

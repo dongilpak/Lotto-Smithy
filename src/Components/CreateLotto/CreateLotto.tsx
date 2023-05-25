@@ -1,7 +1,54 @@
 import React, { useEffect, useState } from 'react';
+import { useAppSelector, useAppDispatch } from '../../hooks';
 import './CreateLotto.css';
+import { controlLogic } from '../../Logic/controlLogic';
 
 const CreateLotto = () => {
+    const [logics, setLogics] = useState<string[]>([]);
+    const [gameCount, setGameCount] = useState<string>();
+
+    const dispatch = useAppDispatch();
+    const lottoInventory = useAppSelector(state => state.lotto.inventory);
+
+    const value = useAppSelector(state => state.lotto.value.flat());
+
+    const createLotto = () => {
+        dispatch(controlLogic(lottoInventory, logics, gameCount));
+    };
+
+    const getGameCount = (
+        event: React.MouseEvent<HTMLInputElement, MouseEvent>
+    ) => {
+        const value: string = event.currentTarget.value;
+
+        if (gameCount === value) {
+            setGameCount(value);
+            return;
+        }
+
+        setGameCount(value);
+    };
+
+    const getLogics = (
+        event: React.MouseEvent<HTMLInputElement, MouseEvent>
+    ) => {
+        const value: string = event.currentTarget.value;
+
+        if (logics.find(logic => logic === value)) {
+            const removeRepeat = logics.filter(logic => logic !== value);
+
+            setLogics(removeRepeat);
+
+            return;
+        }
+
+        setLogics(logics => [...logics, value]);
+    };
+
+    useEffect(() => {
+        console.log(value);
+    });
+
     return (
         <div className='create--container'>
             <div className='create--box'>
@@ -15,6 +62,8 @@ const CreateLotto = () => {
                                     type='checkbox'
                                     name='lotto-logic'
                                     id='commonOne'
+                                    value='commonOne'
+                                    onClick={e => getLogics(e)}
                                 />
                                 <label htmlFor='commonOne'>1</label>
                             </li>
@@ -23,6 +72,8 @@ const CreateLotto = () => {
                                     type='checkbox'
                                     name='lotto-logic'
                                     id='commonTwo'
+                                    value='commonTwo'
+                                    onClick={e => getLogics(e)}
                                 />
                                 <label htmlFor='commonTwo'>2</label>
                             </li>
@@ -31,6 +82,8 @@ const CreateLotto = () => {
                                     type='checkbox'
                                     name='lotto-logic'
                                     id='commonThree'
+                                    value='commonThree'
+                                    onClick={e => getLogics(e)}
                                 />
                                 <label htmlFor='commonThree'>3</label>
                             </li>
@@ -44,6 +97,8 @@ const CreateLotto = () => {
                                     type='checkbox'
                                     name='lotto-logic'
                                     id='specialOne'
+                                    value='specialOne'
+                                    onClick={e => getLogics(e)}
                                 />
                                 <label htmlFor='specialOne'>1</label>
                             </li>
@@ -52,6 +107,8 @@ const CreateLotto = () => {
                                     type='checkbox'
                                     name='lotto-logic'
                                     id='specialTwo'
+                                    value='specialTwo'
+                                    onClick={e => getLogics(e)}
                                 />
                                 <label htmlFor='specialTwo'>2</label>
                             </li>
@@ -60,6 +117,8 @@ const CreateLotto = () => {
                                     type='checkbox'
                                     name='lotto-logic'
                                     id='specialThree'
+                                    value='specialThree'
+                                    onClick={e => getLogics(e)}
                                 />
                                 <label htmlFor='specialThree'>3</label>
                             </li>
@@ -74,6 +133,8 @@ const CreateLotto = () => {
                                 type='radio'
                                 name='lotto-count'
                                 id='countFive'
+                                value='countFive'
+                                onClick={e => getGameCount(e)}
                             />
                             <label htmlFor='countFive'>5</label>
                         </li>
@@ -82,11 +143,17 @@ const CreateLotto = () => {
                                 type='radio'
                                 name='lotto-count'
                                 id='countTen'
+                                value='countTen'
+                                onClick={e => getGameCount(e)}
                             />
                             <label htmlFor='countTen'>10</label>
                         </li>
                     </ul>
-                    <button className='create--btn' type='button'>
+                    <button
+                        className='create--btn'
+                        type='button'
+                        onClick={createLotto}
+                    >
                         로또 번호 생성
                     </button>
                 </div>
