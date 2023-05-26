@@ -28,5 +28,8 @@ const getMainLotto = (mainSection, lotto) => {
             count++;
         }
     }
-    return lotto;
+
+    const sortLotto = lotto.sort((a, b) => a - b);
+
+    return sortLotto;
 };

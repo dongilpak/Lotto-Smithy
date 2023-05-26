@@ -10,7 +10,7 @@ const CreateLotto = () => {
     const dispatch = useAppDispatch();
     const lottoInventory = useAppSelector(state => state.lotto.inventory);
 
-    const value = useAppSelector(state => state.lotto.value.flat());
+    const lottoValue = useAppSelector(state => state.lotto.value.flat());
 
     const createLotto = () => {
         dispatch(controlLogic(lottoInventory, logics, gameCount));
@@ -46,8 +46,8 @@ const CreateLotto = () => {
     };
 
     useEffect(() => {
-        console.log(value);
-    });
+        console.log(lottoValue);
+    }, [lottoValue]);
 
     return (
         <div className='create--container'>

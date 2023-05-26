@@ -42,5 +42,7 @@ const getSubLotto = (mainSection, lotto, rangeNum) => {
         lotto.push(subSection[getSub][getSubLotto]);
     }
 
-    return lotto;
+    const sortLotto = lotto.sort((a, b) => a - b);
+
+    return sortLotto;
 };

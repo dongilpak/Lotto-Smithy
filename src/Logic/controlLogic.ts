@@ -8,7 +8,7 @@ import { speThree } from './speThree';
 
 export const controlLogic =
     (inventory: number[][], logics: string[], count: string) => dispatch => {
-        const lotto = [];
+        const lotto: number[][] = [];
         const gameCount: number = count === 'countFive' ? 5 : 10;
         const checkRandom =
             Math.floor(gameCount / logics.length) * logics.length;

@@ -27,5 +27,7 @@ export const comOne = rangeNum => {
         lotto.push(subSection[i][getSubLotto]);
     }
 
-    return lotto;
+    const sortLotto = lotto.sort((a, b) => a - b);
+
+    return sortLotto;
 };

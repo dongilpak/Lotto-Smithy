@@ -1,7 +1,7 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 interface lottoObject {
-    value: number[][];
+    value: number[][][];
     inventory: number[][];
 }
 
@@ -20,8 +20,22 @@ const lottoSlice = createSlice({
     name: 'lotto',
     initialState,
     reducers: {
-        getLogic: (state, action: PayloadAction<number[]>) => {
-            state.value.push(action.payload);
+        getLogic: (state, action: PayloadAction<number[][]>) => {
+            if (state.value.flat().length >= 30) {
+                const startCount =
+                    state.value.flat().length + action.payload.length - 30;
+                const originalLotto = state.value
+                    .flat()
+                    .slice(startCount, state.value.flat().length);
+                state.value.splice(0);
+                for (let i = 0; i < action.payload.length; i++) {
+                    originalLotto.push(action.payload[i]);
+                }
+
+                state.value.push(originalLotto);
+            } else {
+                state.value.push(action.payload);
+            }
         },
     },
 });
