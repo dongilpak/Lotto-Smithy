@@ -53,6 +53,13 @@ const CreateLotto = () => {
         <div className='create--container'>
             <div className='create--box'>
                 <h2 className='create--title'>로또 번호 생성</h2>
+                <div className='create--explanation'>
+                    <h3 className='explanation--title'>설명</h3>
+                    <div className='explanation--item'>
+                        <span>1. 번호 추출방법 선택 - 갯수제한 없음</span>
+                        <span>2. 게임 수 선택 - 1개만 선택 가능</span>
+                    </div>
+                </div>
                 <div className='create--selectState'>
                     <div className='selectState--common'>
                         <h3 className='common--title'>보통</h3>

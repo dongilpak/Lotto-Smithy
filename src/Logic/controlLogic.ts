@@ -1,4 +1,4 @@
-import { getLogic } from '../reducers/lottoReducer';
+import { getLogic, getSuggestion } from '../reducers/lottoReducer';
 import { comOne } from './comOne';
 import { comTwo } from './comTwo';
 import { comThree } from './comThree';
@@ -143,3 +143,38 @@ export const controlLogic =
 
         dispatch(getLogic(lotto));
     };
+
+export const controlSuggestion = (inventory: number[][]) => dispatch => {
+    const lotto: number[][] = [];
+    const logics = [
+        'commonOne',
+        'commonTwo',
+        'commonThree',
+        'specialOne',
+        'specialTwo',
+    ];
+
+    for (let i = 0; i < logics.length; i++) {
+        switch (logics[i]) {
+            case 'commonOne':
+                lotto.push(comOne(inventory));
+                break;
+            case 'commonTwo':
+                lotto.push(comTwo(inventory));
+                break;
+            case 'commonThree':
+                lotto.push(comThree(inventory));
+                break;
+            case 'specialOne':
+                lotto.push(speOne(inventory));
+                break;
+            case 'specialTwo':
+                lotto.push(speTwo(inventory));
+                break;
+            default:
+                break;
+        }
+    }
+
+    dispatch(getSuggestion(lotto));
+};

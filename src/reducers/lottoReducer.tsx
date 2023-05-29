@@ -3,6 +3,7 @@ import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 interface lottoObject {
     value: number[][][];
     inventory: number[][];
+    suggestions: number[][][];
 }
 
 const initialState: lottoObject = {
@@ -14,6 +15,7 @@ const initialState: lottoObject = {
         [31, 32, 33, 34, 35, 36, 37, 38, 39, 40],
         [41, 42, 43, 44, 45],
     ],
+    suggestions: [],
 };
 
 const lottoSlice = createSlice({
@@ -37,9 +39,17 @@ const lottoSlice = createSlice({
                 state.value.push(action.payload);
             }
         },
+        getSuggestion: (state, action) => {
+            if (state.suggestions) {
+                state.suggestions.splice(0);
+                state.suggestions.push(action.payload);
+                return;
+            }
+            state.suggestions.push(action.payload);
+        },
     },
 });
 
-export const { getLogic } = lottoSlice.actions;
+export const { getLogic, getSuggestion } = lottoSlice.actions;
 
 export default lottoSlice.reducer;

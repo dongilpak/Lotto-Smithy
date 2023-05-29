@@ -17,6 +17,24 @@
     font-size: var(--header-subtitle);
 }
 
+.create--explanation {
+    text-align: center;
+    border-bottom: 0.1rem solid #fff;
+    padding-bottom: 0.5rem;
+}
+
+.explanation--title {
+    font-size: var(--article-title);
+    margin-bottom: 0.5rem;
+}
+
+.explanation--item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: var(--annotation-text);
+}
+
 .create--selectState {
     width: 100%;
     margin: 2.5rem 0;

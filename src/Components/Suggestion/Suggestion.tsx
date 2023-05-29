@@ -1,116 +1,40 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Suggestion.css';
+import { useAppDispatch, useAppSelector } from '../../hooks';
+import valueOfLotto from '../ListOfLotto/valueOfLotto';
+import { controlSuggestion } from '../../Logic/controlLogic';
 
 const Suggestion = () => {
+    const dispatch = useAppDispatch();
+    const lottoInventory = useAppSelector(state => state.lotto.inventory);
+    const suggestionValue = useAppSelector(state =>
+        state.lotto.suggestions.flat()
+    );
+
+    const handleRefresh = () => {
+        dispatch(controlSuggestion(lottoInventory));
+    };
+
+    useEffect(() => {
+        dispatch(controlSuggestion(lottoInventory));
+    }, [lottoInventory, dispatch]);
+
     return (
         <div className='suggestion--container'>
             <div className='suggestion--box'>
                 <h2 className='suggestion--title'>추천 번호</h2>
 
                 <ul className='suggestion--lotto'>
-                    <ul className='suggestion--lotto-ball'>
-                        <li className='suggestion--ball suggestion--ball-one'>
-                            6
-                        </li>
-                        <li className='suggestion--ball suggestion--ball-two'>
-                            12
-                        </li>
-                        <li className='suggestion--ball suggestion--ball-three'>
-                            31
-                        </li>
-                        <li className='suggestion--ball suggestion--ball-four'>
-                            35
-                        </li>
-                        <li className='suggestion--ball suggestion--ball-five'>
-                            38
-                        </li>
-                        <li className='suggestion--ball suggestion--ball-six'>
-                            43
-                        </li>
-                    </ul>
-                    <ul className='suggestion--lotto-ball'>
-                        <li className='suggestion--ball suggestion--ball-one'>
-                            6
-                        </li>
-                        <li className='suggestion--ball suggestion--ball-two'>
-                            12
-                        </li>
-                        <li className='suggestion--ball suggestion--ball-three'>
-                            31
-                        </li>
-                        <li className='suggestion--ball suggestion--ball-four'>
-                            35
-                        </li>
-                        <li className='suggestion--ball suggestion--ball-five'>
-                            38
-                        </li>
-                        <li className='suggestion--ball suggestion--ball-six'>
-                            43
-                        </li>
-                    </ul>
-                    <ul className='suggestion--lotto-ball'>
-                        <li className='suggestion--ball suggestion--ball-one'>
-                            6
-                        </li>
-                        <li className='suggestion--ball suggestion--ball-two'>
-                            12
-                        </li>
-                        <li className='suggestion--ball suggestion--ball-three'>
-                            31
-                        </li>
-                        <li className='suggestion--ball suggestion--ball-four'>
-                            35
-                        </li>
-                        <li className='suggestion--ball suggestion--ball-five'>
-                            38
-                        </li>
-                        <li className='suggestion--ball suggestion--ball-six'>
-                            43
-                        </li>
-                    </ul>
-                    <ul className='suggestion--lotto-ball'>
-                        <li className='suggestion--ball suggestion--ball-one'>
-                            6
-                        </li>
-                        <li className='suggestion--ball suggestion--ball-two'>
-                            12
-                        </li>
-                        <li className='suggestion--ball suggestion--ball-three'>
-                            31
-                        </li>
-                        <li className='suggestion--ball suggestion--ball-four'>
-                            35
-                        </li>
-                        <li className='suggestion--ball suggestion--ball-five'>
-                            38
-                        </li>
-                        <li className='suggestion--ball suggestion--ball-six'>
-                            43
-                        </li>
-                    </ul>
-                    <ul className='suggestion--lotto-ball'>
-                        <li className='suggestion--ball suggestion--ball-one'>
-                            6
-                        </li>
-                        <li className='suggestion--ball suggestion--ball-two'>
-                            12
-                        </li>
-                        <li className='suggestion--ball suggestion--ball-three'>
-                            31
-                        </li>
-                        <li className='suggestion--ball suggestion--ball-four'>
-                            35
-                        </li>
-                        <li className='suggestion--ball suggestion--ball-five'>
-                            38
-                        </li>
-                        <li className='suggestion--ball suggestion--ball-six'>
-                            43
-                        </li>
-                    </ul>
+                    {suggestionValue.map((value, i) =>
+                        valueOfLotto('suggestion', value, lottoInventory, i)
+                    )}
                 </ul>
 
-                <button className='refresh--btn' type='submit'>
+                <button
+                    className='refresh--btn'
+                    type='button'
+                    onClick={handleRefresh}
+                >
                     새로고침
                 </button>
             </div>

@@ -14,6 +14,10 @@
     overflow: visible scroll;
 }
 
+.list--box::-webkit-scrollbar {
+    display: none;
+}
+
 .list--title {
     font-size: var(--header-subtitle);
     margin-bottom: 0.5rem;
