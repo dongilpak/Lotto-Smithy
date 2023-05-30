@@ -6,18 +6,17 @@ import { controlSuggestion } from '../../Logic/controlLogic';
 
 const Suggestion = () => {
     const dispatch = useAppDispatch();
-    const lottoInventory = useAppSelector(state => state.lotto.inventory);
     const suggestionValue = useAppSelector(state =>
         state.lotto.suggestions.flat()
     );
 
     const handleRefresh = () => {
-        dispatch(controlSuggestion(lottoInventory));
+        dispatch(controlSuggestion());
     };
 
     useEffect(() => {
-        dispatch(controlSuggestion(lottoInventory));
-    }, [lottoInventory, dispatch]);
+        dispatch(controlSuggestion());
+    }, [dispatch]);
 
     return (
         <div className='suggestion--container'>
@@ -26,7 +25,7 @@ const Suggestion = () => {
 
                 <ul className='suggestion--lotto'>
                     {suggestionValue.map((value, i) =>
-                        valueOfLotto('suggestion', value, lottoInventory, i)
+                        valueOfLotto('suggestion', value, i)
                     )}
                 </ul>
 

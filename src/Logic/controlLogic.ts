@@ -7,28 +7,35 @@ import { speOne } from './speOne';
 import { speTwo } from './speTwo';
 import { speThree } from './speThree';
 
-const logicSelect = (logic: string, inventory: number[][]) => {
+const logicSelect = (logic: string) => {
+    const numStorage = [
+        [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        [11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+        [21, 22, 23, 24, 25, 26, 27, 28, 29, 30],
+        [31, 32, 33, 34, 35, 36, 37, 38, 39, 40],
+        [41, 42, 43, 44, 45],
+    ];
+
     switch (logic) {
         case 'commonOne':
-            return comOne(inventory);
+            return comOne(numStorage);
         case 'commonTwo':
-            return comTwo(inventory);
+            return comTwo(numStorage);
         case 'commonThree':
-            return comThree(inventory);
+            return comThree(numStorage);
         case 'specialOne':
-            return speOne(inventory);
+            return speOne(numStorage);
         case 'specialTwo':
-            return speTwo(inventory);
+            return speTwo(numStorage);
         case 'specialThree':
-            return speThree(inventory);
+            return speThree(numStorage);
         default:
             break;
     }
 };
 
 export const controlLogic =
-    (inventory: number[][], logics: string[], count: string) =>
-    (dispatch: Dispatch) => {
+    (logics: string[], count: string) => (dispatch: Dispatch) => {
         const lotto: number[][] = [];
         const gameCount: number = count === 'countFive' ? 5 : 10;
         const checkRandom =
@@ -42,12 +49,12 @@ export const controlLogic =
             );
 
             for (let i = 0; i < newLogics.length; i++) {
-                lotto.push(logicSelect(logics[i], inventory));
+                lotto.push(logicSelect(logics[i]));
             }
         } else if (gameCount % logics.length === 0) {
             while (lotto.length < gameCount) {
                 for (let i = 0; i < logics.length; i++) {
-                    lotto.push(logicSelect(logics[i], inventory));
+                    lotto.push(logicSelect(logics[i]));
                 }
             }
         } else {
@@ -67,10 +74,10 @@ export const controlLogic =
                         (Math.random() * 10) / divider
                     );
 
-                    lotto.push(logicSelect(logics[getLogicNum], inventory));
+                    lotto.push(logicSelect(logics[getLogicNum]));
                 } else {
                     for (let i = 0; i < logics.length; i++) {
-                        lotto.push(logicSelect(logics[i], inventory));
+                        lotto.push(logicSelect(logics[i]));
                     }
                 }
             }
@@ -79,20 +86,19 @@ export const controlLogic =
         dispatch(getLogic(lotto));
     };
 
-export const controlSuggestion =
-    (inventory: number[][]) => (dispatch: Dispatch) => {
-        const lotto: number[][] = [];
-        const logics = [
-            'commonOne',
-            'commonTwo',
-            'commonThree',
-            'specialOne',
-            'specialTwo',
-        ];
+export const controlSuggestion = () => (dispatch: Dispatch) => {
+    const lotto: number[][] = [];
+    const logics = [
+        'commonOne',
+        'commonTwo',
+        'commonThree',
+        'specialOne',
+        'specialTwo',
+    ];
 
-        for (let i = 0; i < logics.length; i++) {
-            lotto.push(logicSelect(logics[i], inventory));
-        }
+    for (let i = 0; i < logics.length; i++) {
+        lotto.push(logicSelect(logics[i]));
+    }
 
-        dispatch(getSuggestion(lotto));
-    };
+    dispatch(getSuggestion(lotto));
+};

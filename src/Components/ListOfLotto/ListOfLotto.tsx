@@ -4,7 +4,6 @@ import { useAppSelector } from '../../hooks';
 import valueOfLotto from './valueOfLotto';
 
 const ListOfLotto = () => {
-    const lottoInventory = useAppSelector(state => state.lotto.inventory);
     const createLottoValue = useAppSelector(state =>
         state.lotto.value.flat().reverse()
     );
@@ -18,7 +17,7 @@ const ListOfLotto = () => {
                 </p>
                 <ul className='list--lotto'>
                     {createLottoValue.map((value, i) =>
-                        valueOfLotto('list', value, lottoInventory, i)
+                        valueOfLotto('list', value, i)
                     )}
                 </ul>
             </div>

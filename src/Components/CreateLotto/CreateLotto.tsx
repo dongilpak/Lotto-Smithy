@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { useAppSelector, useAppDispatch } from '../../hooks';
+import React, { useState } from 'react';
+import { useAppDispatch } from '../../hooks';
 import './CreateLotto.css';
 import { controlLogic } from '../../Logic/controlLogic';
 
@@ -8,12 +8,13 @@ const CreateLotto = () => {
     const [gameCount, setGameCount] = useState<string>();
 
     const dispatch = useAppDispatch();
-    const lottoInventory = useAppSelector(state => state.lotto.inventory);
-
-    const lottoValue = useAppSelector(state => state.lotto.value.flat());
 
     const createLotto = () => {
-        dispatch(controlLogic(lottoInventory, logics, gameCount));
+        if (logics.length === 0 || gameCount === undefined) {
+            alert('추출 방법 또는 게임 수를 선택해 주세요');
+            return;
+        }
+        dispatch(controlLogic(logics, gameCount));
     };
 
     const getGameCount = (
@@ -44,10 +45,6 @@ const CreateLotto = () => {
 
         setLogics(logics => [...logics, value]);
     };
-
-    useEffect(() => {
-        console.log(lottoValue);
-    }, [lottoValue]);
 
     return (
         <div className='create--container'>
