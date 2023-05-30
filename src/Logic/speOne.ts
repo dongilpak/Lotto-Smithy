@@ -1,11 +1,11 @@
-export const comThree = rangeNum => {
+export const speOne = (rangeNum: number[][]) => {
     let lotto = [];
-    let mainSection = null;
+    let mainSection: number[] = [];
     const getMain = Math.floor((Math.random() * 10) / 2);
 
     mainSection = rangeNum[getMain];
 
-    while (lotto.length < 3) {
+    while (lotto.length < 4) {
         const getMainLotto =
             mainSection.length === 5
                 ? Math.floor((Math.random() * 10) / 2)
@@ -19,10 +19,14 @@ export const comThree = rangeNum => {
     return getSubLotto(mainSection, lotto, rangeNum);
 };
 
-const getSubLotto = (mainSection, lotto, rangeNum) => {
+const getSubLotto = (
+    mainSection: number[],
+    lotto: number[],
+    rangeNum: number[][]
+) => {
     const subSection = rangeNum.filter(item => item !== mainSection);
 
-    let partBefore = [];
+    let partBefore: number[] = [];
 
     while (lotto.length < 6) {
         const getSub = Math.floor((Math.random() * 10) / 2);

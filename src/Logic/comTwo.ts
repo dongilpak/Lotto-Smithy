@@ -1,6 +1,6 @@
-export const comTwo = rangeNum => {
-    let lotto = [];
-    let mainSection = [];
+export const comTwo = (rangeNum: number[][]) => {
+    let lotto: number[] = [];
+    let mainSection: number[][] = [];
 
     while (mainSection.length < 2) {
         const getRandomNum = Math.floor((Math.random() * 10) / 2);
@@ -31,7 +31,11 @@ export const comTwo = rangeNum => {
     return getSubLotto(mainSection, lotto, rangeNum);
 };
 
-const getSubLotto = (mainSection, lotto, rangeNum) => {
+const getSubLotto = (
+    mainSection: number[][],
+    lotto: number[],
+    rangeNum: number[][]
+) => {
     const subSection = rangeNum.filter(
         item => item !== mainSection[0] && item !== mainSection[1]
     );

@@ -1,4 +1,5 @@
 import { getLogic, getSuggestion } from '../reducers/lottoReducer';
+import { Dispatch } from '@reduxjs/toolkit';
 import { comOne } from './comOne';
 import { comTwo } from './comTwo';
 import { comThree } from './comThree';
@@ -6,8 +7,28 @@ import { speOne } from './speOne';
 import { speTwo } from './speTwo';
 import { speThree } from './speThree';
 
+const logicSelect = (logic: string, inventory: number[][]) => {
+    switch (logic) {
+        case 'commonOne':
+            return comOne(inventory);
+        case 'commonTwo':
+            return comTwo(inventory);
+        case 'commonThree':
+            return comThree(inventory);
+        case 'specialOne':
+            return speOne(inventory);
+        case 'specialTwo':
+            return speTwo(inventory);
+        case 'specialThree':
+            return speThree(inventory);
+        default:
+            break;
+    }
+};
+
 export const controlLogic =
-    (inventory: number[][], logics: string[], count: string) => dispatch => {
+    (inventory: number[][], logics: string[], count: string) =>
+    (dispatch: Dispatch) => {
         const lotto: number[][] = [];
         const gameCount: number = count === 'countFive' ? 5 : 10;
         const checkRandom =
@@ -21,56 +42,12 @@ export const controlLogic =
             );
 
             for (let i = 0; i < newLogics.length; i++) {
-                switch (logics[i]) {
-                    case 'commonOne':
-                        lotto.push(comOne(inventory));
-                        break;
-                    case 'commonTwo':
-                        lotto.push(comTwo(inventory));
-                        break;
-                    case 'commonThree':
-                        lotto.push(comThree(inventory));
-                        break;
-                    case 'specialOne':
-                        lotto.push(speOne(inventory));
-                        break;
-                    case 'specialTwo':
-                        lotto.push(speTwo(inventory));
-                        break;
-                    case 'specialThree':
-                        lotto.push(speThree(inventory));
-                        break;
-                    default:
-                        break;
-                }
+                lotto.push(logicSelect(logics[i], inventory));
             }
-        }
-
-        if (gameCount % logics.length === 0) {
+        } else if (gameCount % logics.length === 0) {
             while (lotto.length < gameCount) {
                 for (let i = 0; i < logics.length; i++) {
-                    switch (logics[i]) {
-                        case 'commonOne':
-                            lotto.push(comOne(inventory));
-                            break;
-                        case 'commonTwo':
-                            lotto.push(comTwo(inventory));
-                            break;
-                        case 'commonThree':
-                            lotto.push(comThree(inventory));
-                            break;
-                        case 'specialOne':
-                            lotto.push(speOne(inventory));
-                            break;
-                        case 'specialTwo':
-                            lotto.push(speTwo(inventory));
-                            break;
-                        case 'specialThree':
-                            lotto.push(speThree(inventory));
-                            break;
-                        default:
-                            break;
-                    }
+                    lotto.push(logicSelect(logics[i], inventory));
                 }
             }
         } else {
@@ -90,52 +67,10 @@ export const controlLogic =
                         (Math.random() * 10) / divider
                     );
 
-                    switch (logics[getLogicNum]) {
-                        case 'commonOne':
-                            lotto.push(comOne(inventory));
-                            break;
-                        case 'commonTwo':
-                            lotto.push(comTwo(inventory));
-                            break;
-                        case 'commonThree':
-                            lotto.push(comThree(inventory));
-                            break;
-                        case 'specialOne':
-                            lotto.push(speOne(inventory));
-                            break;
-                        case 'specialTwo':
-                            lotto.push(speTwo(inventory));
-                            break;
-                        case 'specialThree':
-                            lotto.push(speThree(inventory));
-                            break;
-                        default:
-                            break;
-                    }
+                    lotto.push(logicSelect(logics[getLogicNum], inventory));
                 } else {
                     for (let i = 0; i < logics.length; i++) {
-                        switch (logics[i]) {
-                            case 'commonOne':
-                                lotto.push(comOne(inventory));
-                                break;
-                            case 'commonTwo':
-                                lotto.push(comTwo(inventory));
-                                break;
-                            case 'commonThree':
-                                lotto.push(comThree(inventory));
-                                break;
-                            case 'specialOne':
-                                lotto.push(speOne(inventory));
-                                break;
-                            case 'specialTwo':
-                                lotto.push(speTwo(inventory));
-                                break;
-                            case 'specialThree':
-                                lotto.push(speThree(inventory));
-                                break;
-                            default:
-                                break;
-                        }
+                        lotto.push(logicSelect(logics[i], inventory));
                     }
                 }
             }
@@ -144,37 +79,20 @@ export const controlLogic =
         dispatch(getLogic(lotto));
     };
 
-export const controlSuggestion = (inventory: number[][]) => dispatch => {
-    const lotto: number[][] = [];
-    const logics = [
-        'commonOne',
-        'commonTwo',
-        'commonThree',
-        'specialOne',
-        'specialTwo',
-    ];
+export const controlSuggestion =
+    (inventory: number[][]) => (dispatch: Dispatch) => {
+        const lotto: number[][] = [];
+        const logics = [
+            'commonOne',
+            'commonTwo',
+            'commonThree',
+            'specialOne',
+            'specialTwo',
+        ];
 
-    for (let i = 0; i < logics.length; i++) {
-        switch (logics[i]) {
-            case 'commonOne':
-                lotto.push(comOne(inventory));
-                break;
-            case 'commonTwo':
-                lotto.push(comTwo(inventory));
-                break;
-            case 'commonThree':
-                lotto.push(comThree(inventory));
-                break;
-            case 'specialOne':
-                lotto.push(speOne(inventory));
-                break;
-            case 'specialTwo':
-                lotto.push(speTwo(inventory));
-                break;
-            default:
-                break;
+        for (let i = 0; i < logics.length; i++) {
+            lotto.push(logicSelect(logics[i], inventory));
         }
-    }
 
-    dispatch(getSuggestion(lotto));
-};
+        dispatch(getSuggestion(lotto));
+    };

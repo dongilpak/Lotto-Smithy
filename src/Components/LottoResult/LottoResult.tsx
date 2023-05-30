@@ -48,10 +48,7 @@ const LottoResult = () => {
     }, [dispatch, updateNum]);
 
     useEffect(() => {
-        if (
-            lottoValue.returnValue === 'fail' ||
-            lottoValue.returnValue === ''
-        ) {
+        if (lottoValue.returnValue === 'fail') {
             getUpdate();
         } else if (lottoValue.returnValue === 'success') {
             return;

@@ -14,8 +14,7 @@ const ListOfLotto = () => {
             <div className='list--box'>
                 <h2 className='list--title'>로또 번호</h2>
                 <p className='list--caution'>
-                    번호는 최대 30개까지 저장 됩니다. 그 이상 생성할 경우 먼저
-                    생성된 번호 목록은 삭제 됩니다.
+                    번호는 최대 30개까지 저장 됩니다.
                 </p>
                 <ul className='list--lotto'>
                     {createLottoValue.map((value, i) =>

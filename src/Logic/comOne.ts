@@ -1,6 +1,6 @@
-export const comOne = rangeNum => {
-    let lotto = [];
-    let mainSection = null;
+export const comOne = (rangeNum: number[][]) => {
+    let lotto: number[] = [];
+    let mainSection: number[] = [];
     const getMain = Math.floor((Math.random() * 10) / 2);
 
     mainSection = rangeNum[getMain];

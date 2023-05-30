@@ -1,6 +1,6 @@
-export const speTwo = rangeNum => {
-    let lotto = [];
-    let mainSection = [];
+export const speTwo = (rangeNum: number[][]) => {
+    let lotto: number[] = [];
+    let mainSection: number[][] = [];
 
     while (mainSection.length < 3) {
         const getRandomNum = Math.floor((Math.random() * 10) / 2);
@@ -13,7 +13,7 @@ export const speTwo = rangeNum => {
     return getMainLotto(mainSection, lotto);
 };
 
-const getMainLotto = (mainSection, lotto) => {
+const getMainLotto = (mainSection: number[][], lotto: number[]) => {
     for (let i = 0; i < mainSection.length; i++) {
         let count = 0;
         while (count < 2) {

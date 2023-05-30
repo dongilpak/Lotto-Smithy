@@ -22,3 +22,10 @@
 .part-five {
     background-color: var(--color-forty-five);
 }
+
+@media screen and (min-width: 1024px) {
+    .container {
+        width: 50%;
+        margin: 0 auto;
+    }
+}

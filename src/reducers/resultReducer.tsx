@@ -44,7 +44,7 @@ const initialState: resultObject = {
         firstAccumamnt: 0,
         firstPrzwnerCo: 0,
         firstWinamnt: 0,
-        returnValue: '',
+        returnValue: 'fail',
         totSellamnt: 0,
     },
 };
