@@ -1,7 +1,7 @@
 .suggestion--container {
     width: 100%;
     padding: 2rem;
-    background-color: var(--palette-color-one);
+    background-color: var(--main-color-one);
     color: #fff;
 }
 
@@ -28,34 +28,14 @@
 
 .suggestion--ball {
     border-radius: 50%;
-    font-size: var(--normal-text);
-    width: 2.6rem;
-    height: 2.6rem;
+    /* font-size: var(--normal-text)/ */
+    font-size: 2rem;
+    /* width: 2.6rem;
+    height: 2.6rem; */
+    width: 4rem;
+    height: 4rem;
     text-align: center;
     line-height: 1.8;
-}
-
-.suggestion--ball-one {
-    background-color: var(--color-ten);
-}
-
-.suggestion--ball-two {
-    background-color: var(--color-twenty);
-}
-.suggestion--ball-three {
-    background-color: var(--color-forty);
-}
-
-.suggestion--ball-four {
-    background-color: var(--color-forty);
-}
-
-.suggestion--ball-five {
-    background-color: var(--color-forty);
-}
-
-.suggestion--ball-six {
-    background-color: var(--color-forty-five);
 }
 
 .refresh--btn {

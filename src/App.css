@@ -4,23 +4,23 @@
 }
 
 .part-one {
-    background-color: var(--color-ten);
+    background-color: var(--color-one);
 }
 
 .part-two {
-    background-color: var(--color-twenty);
+    background-color: var(--color-ten);
 }
 
 .part-three {
-    background-color: var(--color-thirty);
+    background-color: var(--color-twenty);
 }
 
 .part-four {
-    background-color: var(--color-forty);
+    background-color: var(--color-thirty);
 }
 
 .part-five {
-    background-color: var(--color-forty-five);
+    background-color: var(--color-forty);
 }
 
 @media screen and (min-width: 1024px) {

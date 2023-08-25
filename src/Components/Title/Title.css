@@ -5,6 +5,6 @@
 
 .header--title {
     font-size: var(--header-title);
-    background: linear-gradient(#fff, var(--palette-color-four));
+    background: linear-gradient(#fff, var(--main-color-four));
     font-style: italic;
 }

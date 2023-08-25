@@ -1,7 +1,7 @@
 .list--container {
     width: 100%;
     padding: 2rem;
-    background-color: var(--palette-color-three);
+    background-color: var(--main-color-three);
     color: #fff;
 }
 
@@ -41,32 +41,12 @@
 
 .list--ball {
     border-radius: 50%;
-    font-size: var(--normal-text);
+    /* font-size: var(--normal-text);
     width: 2.6rem;
-    height: 2.6rem;
+    height: 2.6rem; */
+    font-size: 2rem;
+    width: 4rem;
+    height: 4rem;
     text-align: center;
     line-height: 1.8;
-}
-
-.list--ball-one {
-    background-color: var(--color-ten);
-}
-
-.list--ball-two {
-    background-color: var(--color-twenty);
-}
-.list--ball-three {
-    background-color: var(--color-forty);
-}
-
-.list--ball-four {
-    background-color: var(--color-forty);
-}
-
-.list--ball-five {
-    background-color: var(--color-forty);
-}
-
-.list--ball-six {
-    background-color: var(--color-forty-five);
 }
