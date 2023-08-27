@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import './Suggestion.css';
-import { useAppDispatch, useAppSelector } from '../../hooks';
+import { useAppDispatch, useAppSelector } from '../../hooks/reduxHooks';
 import valueOfLotto from '../ListOfLotto/valueOfLotto';
 import { controlSuggestion } from '../../Logic/controlLogic';
 

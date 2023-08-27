@@ -22,6 +22,38 @@
     font-size: var(--article-title);
 }
 
+.result--info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+}
+
+.result--info > div {
+    width: 16rem;
+    text-align: center;
+    padding: 0 0.5rem;
+}
+
+.result--info > div .info--title {
+    background-color: var(--main-color-one);
+    padding: 0.5rem 0;
+    font-size: var(--article-title);
+}
+
+.result--info .next-turn .countdown {
+    font-size: var(--article-title);
+    margin-top: 1rem;
+}
+
+.result--info .firstWinamnt .win-amount-detail {
+    margin-top: 1rem;
+    font-size: var(--article-title);
+}
+
+.result--info .firstWinamnt .win-amount-detail > span:last-child {
+    font-size: var(--annotation-text);
+}
+
 .result--num {
     display: flex;
     margin-top: 3rem;
@@ -33,9 +65,9 @@
 
 .num--ball {
     border-radius: 50%;
-    font-size: var(--normal-text);
-    width: 2.6rem;
-    height: 2.6rem;
+    font-size: var(--ball-text);
+    width: var(--ball-size);
+    height: var(--ball-size);
     text-align: center;
     line-height: 1.8;
 }

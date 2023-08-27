@@ -22,6 +22,9 @@
     --normal-text: 1.4rem;
     --annotation-text: 1.2rem;
 
+    /* Ball size */
+    --ball-size: 4rem;
+
     /* Font family */
     --font-family: 'Noto Sans KR', sans-serif;
 

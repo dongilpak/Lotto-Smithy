@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useAppDispatch } from '../../hooks';
+import { useAppDispatch } from '../../hooks/reduxHooks';
 import './CreateLotto.css';
 import { controlLogic } from '../../Logic/controlLogic';
 

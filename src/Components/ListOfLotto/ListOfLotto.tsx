@@ -1,6 +1,6 @@
 import React from 'react';
 import './ListOfLotto.css';
-import { useAppSelector } from '../../hooks';
+import { useAppSelector } from '../../hooks/reduxHooks';
 import valueOfLotto from './valueOfLotto';
 
 const ListOfLotto = () => {
