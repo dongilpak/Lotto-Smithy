@@ -21,7 +21,7 @@ const LottoResult = () => {
             new Date().getDay() === 6 && new Date().getHours() < 21
                 ? Math.floor(diffDay / 7)
                 : Math.floor(diffDay / 7 + 1);
-        console.log(getUpdateNum);
+
         dispatch(asyncGetResult(getUpdateNum));
     }, [dispatch]);
 

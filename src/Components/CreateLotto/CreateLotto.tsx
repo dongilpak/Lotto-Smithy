@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { useAppDispatch } from '../../hooks/reduxHooks';
 import './CreateLotto.css';
 import { controlLogic } from '../../Logic/controlLogic';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 const CreateLotto = () => {
     const [logics, setLogics] = useState<string[]>([]);
     const [gameCount, setGameCount] = useState<string>();
+    const [isOn, setIsOn] = useState<boolean>(false);
 
     const dispatch = useAppDispatch();
 
@@ -46,15 +48,19 @@ const CreateLotto = () => {
         setLogics(logics => [...logics, value]);
     };
 
+    const toggleHandler = () => {
+        setIsOn(!isOn);
+        console.log(isOn);
+    };
+
     return (
         <div className='create--container'>
             <div className='create--box'>
                 <h2 className='create--title'>로또 번호 생성</h2>
                 <div className='create--explanation'>
-                    <h3 className='explanation--title'>설명</h3>
                     <div className='explanation--item'>
-                        <span>1. 번호 추출방법 선택 - 갯수제한 없음</span>
-                        <span>2. 게임 수 선택 - 1개만 선택 가능</span>
+                        <span>1. 번호 추출방법 선택(갯수제한 없음)</span>
+                        <span>2. 게임 수 선택</span>
                     </div>
                 </div>
                 <div className='create--selectState'>
@@ -127,6 +133,32 @@ const CreateLotto = () => {
                                 <label htmlFor='specialThree'>3</label>
                             </li>
                         </ul>
+                    </div>
+                </div>
+                <div className='create--explanation__logic'>
+                    <div className='explanation--top'>
+                        <h3 className='explanation--title'>추출 번호별 설명</h3>
+                        <button
+                            onClick={toggleHandler}
+                            className='explanation--arrow'
+                        >
+                            <ArrowDropDownIcon
+                                fontSize='large'
+                                viewBox='5 5 12 12'
+                            />
+                        </button>
+                    </div>
+
+                    <div
+                        className={`explanation--logic ${isOn ? 'on' : 'off'}`}
+                    >
+                        <span>보통 1 - 1개의 구간에서 번호 2개 선택</span>
+                        <span>보통 2 - 2개의 구간에서 각각 번호 2개 선택</span>
+                        <span>보통 3 - 1개의 구간에서 번호 3개 선택</span>
+                        <span>특수 1 - 1개의 구간에서 번호 4개 선택</span>
+                        <span>특수 2 - 3개의 구간에서 각각 번호 2개 선택</span>
+                        <span>특수 3 - 2개의 구간에서 각각 번호 3개 선택</span>
+                        <span>남은 숫자는 선택된 구간 제외 후 랜덤 추출</span>
                     </div>
                 </div>
                 <div className='create--numOfGame'>
