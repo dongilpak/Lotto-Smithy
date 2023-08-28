@@ -15,7 +15,7 @@ const useInterval = (callback, delay) => {
         const timerId = setInterval(executeCallback, delay);
 
         return () => clearInterval(timerId);
-    }, []);
+    }, [delay]);
 };
 
 export default useInterval;
