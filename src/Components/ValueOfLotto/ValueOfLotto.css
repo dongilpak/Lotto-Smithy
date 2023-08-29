@@ -1,0 +1,27 @@
+.lotto-ball-list {
+    display: flex;
+    margin-bottom: 1.5rem;
+}
+
+.ball-value {
+    border-radius: 50%;
+    font-size: var(--ball-text);
+    width: var(--ball-size);
+    height: var(--ball-size);
+    text-align: center;
+    line-height: 1.8;
+    margin: 0 0.2rem;
+}
+
+.saveList {
+    font-size: var(--normal-text);
+    font-weight: bold;
+    background-color: #fff;
+    outline: none;
+    border: 0;
+    border-radius: 0.5rem;
+    letter-spacing: 1.25;
+    width: 4rem;
+    height: 4rem;
+    margin-left: 0.5rem;
+}

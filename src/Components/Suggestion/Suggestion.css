@@ -17,27 +17,6 @@
     margin-bottom: 1.5rem;
 }
 
-.suggestion--lotto-ball {
-    display: flex;
-    margin-bottom: 1.5rem;
-}
-
-.suggestion--lotto-ball li {
-    margin: 0 0.2rem;
-}
-
-.suggestion--ball {
-    border-radius: 50%;
-    /* font-size: var(--normal-text)/ */
-    font-size: 2rem;
-    /* width: 2.6rem;
-    height: 2.6rem; */
-    width: 4rem;
-    height: 4rem;
-    text-align: center;
-    line-height: 1.8;
-}
-
 .refresh--btn {
     font-size: var(--normal-text);
     background-color: #fff;
