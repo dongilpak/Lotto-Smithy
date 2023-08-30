@@ -3,17 +3,28 @@
     margin-bottom: 1.5rem;
 }
 
+.lotto-ball-list:last-child {
+    margin-bottom: 0;
+}
+
 .ball-value {
     border-radius: 50%;
     font-size: var(--ball-text);
     width: var(--ball-size);
     height: var(--ball-size);
-    text-align: center;
-    line-height: 1.8;
     margin: 0 0.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.saveList {
+/* .ball-value > span {
+    height: 100%;
+    margin-bottom: 1rem;
+    padding-top: 1rem;
+} */
+
+.controlBtn {
     font-size: var(--normal-text);
     font-weight: bold;
     background-color: #fff;

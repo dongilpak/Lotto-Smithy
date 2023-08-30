@@ -1,0 +1,64 @@
+.showSaveList {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+.showSaveList.open {
+    display: flex;
+}
+
+.showSaveList.close {
+    display: none;
+}
+
+.showSaveBox {
+    padding: 2rem;
+    border-radius: 0.5rem;
+    background-color: black;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.controlBtns {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.controlBtns > button {
+    font-size: var(--normal-text);
+    font-weight: bold;
+    background-color: #fff;
+    outline: none;
+    border: 0;
+    border-radius: 0.5rem;
+    letter-spacing: 1.25;
+    width: 50%;
+    height: 2.8rem;
+    margin: 0 0.5rem;
+}
+
+.controlBtns button.single {
+    width: 20rem;
+}
+
+.controlBtns > button:hover {
+    cursor: pointer;
+    background-color: var(--main-color-two);
+    color: #fff;
+}
+
+.showSaveBox > p.listNone {
+    font-size: var(--article-title);
+    font-weight: bold;
+    padding: 3rem;
+}

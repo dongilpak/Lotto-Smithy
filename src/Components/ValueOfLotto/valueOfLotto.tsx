@@ -2,7 +2,12 @@ import React from 'react';
 import { checkNumPart } from '../../utils/CheckNumPart';
 import './ValueOfLotto.css';
 
-const ValueOfLotto = (saveLottoList, value: number[], i: number) => {
+const ValueOfLotto = (
+    btnFunc,
+    value: number[],
+    i: number,
+    remove?: boolean
+) => {
     return (
         <ul className='lotto-ball-list' key={i}>
             <li className={`ball-value ${checkNumPart(value[0])}`}>
@@ -23,9 +28,15 @@ const ValueOfLotto = (saveLottoList, value: number[], i: number) => {
             <li className={`ball-value ${checkNumPart(value[5])}`}>
                 {value[5]}
             </li>
-            <button onClick={() => saveLottoList(value)} className='saveList'>
-                저장
-            </button>
+            {remove ? (
+                <button onClick={() => btnFunc(i)} className='controlBtn'>
+                    삭제
+                </button>
+            ) : (
+                <button onClick={() => btnFunc(value)} className='controlBtn'>
+                    저장
+                </button>
+            )}
         </ul>
     );
 };

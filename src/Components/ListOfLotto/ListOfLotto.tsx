@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ListOfLotto.css';
 import { useAppDispatch, useAppSelector } from '../../hooks/reduxHooks';
 import valueOfLotto from '../ValueOfLotto/valueOfLotto';
 import { saveLotto } from '../../reducers/saveLottoReducer';
+import ShowSaveList from '../ShowSaveList/ShowSaveList';
 
 const ListOfLotto = () => {
+    const [isOn, setIsOn] = useState<boolean>(false);
+
     const dispatch = useAppDispatch();
 
     const createLottoValue = useAppSelector(state =>
@@ -12,7 +15,6 @@ const ListOfLotto = () => {
     );
 
     const saveLottoValue = useAppSelector(state => state.saveLotto.value);
-    console.log(saveLottoValue);
 
     const checkDuplication = (value: number[]) => {
         const strValue = value.join();
@@ -24,14 +26,12 @@ const ListOfLotto = () => {
     };
 
     const saveLottoList = (value: number[]) => {
-        const saveLottoLength = saveLottoValue.length;
-
         if (checkDuplication(value)) {
             alert('이미 저장된 번호 목록입니다.');
             return;
         }
 
-        if (saveLottoLength > 9) {
+        if (saveLottoValue.length > 9) {
             alert(
                 '목록 저장은 10개까지 가능합니다.\n더 저장하고 싶다면 저장 목록을 비워주세요.'
             );
@@ -39,6 +39,10 @@ const ListOfLotto = () => {
         }
 
         dispatch(saveLotto(value));
+    };
+
+    const toggleHandler = () => {
+        setIsOn(!isOn);
     };
 
     return (
@@ -54,6 +58,11 @@ const ListOfLotto = () => {
                     )}
                 </div>
             </div>
+            <button onClick={toggleHandler} className='showSaveListBtn'>
+                <span>저장</span>
+                <span>목록</span>
+            </button>
+            <ShowSaveList on={isOn} openListControl={toggleHandler} />
         </div>
     );
 };

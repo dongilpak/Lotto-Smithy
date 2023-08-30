@@ -50,7 +50,6 @@ const CreateLotto = () => {
 
     const toggleHandler = () => {
         setIsOn(!isOn);
-        console.log(isOn);
     };
 
     return (

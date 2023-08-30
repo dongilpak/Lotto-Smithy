@@ -15,9 +15,12 @@ const saveLottoSlice = createSlice({
         saveLotto: (state, action: PayloadAction<number[]>) => {
             state.value.push(action.payload);
         },
+        removeLotto: (state, action: PayloadAction<number>) => {
+            state.value.splice(action.payload, 1);
+        },
     },
 });
 
-export const { saveLotto } = saveLottoSlice.actions;
+export const { saveLotto, removeLotto } = saveLottoSlice.actions;
 
 export default saveLottoSlice.reducer;

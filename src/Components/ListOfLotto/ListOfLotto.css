@@ -3,6 +3,7 @@
     padding: 2rem;
     background-color: var(--main-color-three);
     color: #fff;
+    position: relative;
 }
 
 .list--box {
@@ -28,4 +29,23 @@
     font-size: var(--annotation-text);
     margin-bottom: 1.5rem;
     text-align: center;
+}
+
+.showSaveListBtn {
+    font-size: var(--normal-text);
+    font-weight: bold;
+    background-color: #fff;
+    outline: none;
+    border: 0;
+    border-radius: 50%;
+    letter-spacing: 1.25;
+    width: 5rem;
+    height: 5rem;
+    position: absolute;
+    top: 2rem;
+    right: 3rem;
+}
+
+.showSaveListBtn > span {
+    display: block;
 }
