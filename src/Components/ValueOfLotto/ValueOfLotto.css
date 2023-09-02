@@ -18,12 +18,6 @@
     align-items: center;
 }
 
-/* .ball-value > span {
-    height: 100%;
-    margin-bottom: 1rem;
-    padding-top: 1rem;
-} */
-
 .controlBtn {
     font-size: var(--normal-text);
     font-weight: bold;

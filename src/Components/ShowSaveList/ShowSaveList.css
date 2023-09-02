@@ -62,3 +62,11 @@
     font-weight: bold;
     padding: 3rem;
 }
+
+.captureSection {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: none;
+}
