@@ -57,11 +57,11 @@ const ListOfLotto = () => {
                         valueOfLotto(saveLottoList, value, i)
                     )}
                 </div>
+                <button onClick={toggleHandler} className='showSaveListBtn'>
+                    <span>저장</span>
+                    <span>목록</span>
+                </button>
             </div>
-            <button onClick={toggleHandler} className='showSaveListBtn'>
-                <span>저장</span>
-                <span>목록</span>
-            </button>
             <ShowSaveList on={isOn} openListControl={toggleHandler} />
         </div>
     );
