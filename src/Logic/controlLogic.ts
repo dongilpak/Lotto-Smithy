@@ -38,8 +38,6 @@ export const controlLogic =
     (logics: string[], count: string) => (dispatch: Dispatch) => {
         const lotto: number[][] = [];
         const gameCount: number = count === 'countFive' ? 5 : 10;
-        const checkRandom =
-            Math.floor(gameCount / logics.length) * logics.length;
 
         if (logics.length > gameCount) {
             const getLogicNum = Math.floor((Math.random() * 10) / 1.8);
@@ -58,6 +56,8 @@ export const controlLogic =
                 }
             }
         } else {
+            const checkRandom = gameCount - (gameCount % logics.length);
+
             while (lotto.length < gameCount) {
                 if (lotto.length >= checkRandom) {
                     const divider =

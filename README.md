@@ -1,33 +1,81 @@
-<h1 align="center">로또 대장장이(Lotto Smithy)</h1>
+<h1 align="center">로또 대장간(Lotto Smithy)</h1>
 
 > -   링크 : <https://lotto-smithy.netlify.app/>
 
 ---
 
-## 사용한 언어(라이브러리)
+## 기술스택
 
--   React, typeScript, redux
+### Enviroment
+
+<div>
+    <img src="https://img.shields.io/badge/visualstudiocode-007acc?style=for-the-badge&logo=visualstudiocode&logoColor=white">
+    <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
+    <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
+</div>
+
+### Config
+
+<div>
+    <img src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white">
+</div>
+
+### Development
+
+<div>
+    <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> 
+    <img src="https://img.shields.io/badge/typescript-3178c6?style=for-the-badge&logo=typescript&logoColor=white">
+    <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"> 
+    <img src="https://img.shields.io/badge/redux-764abc?style=for-the-badge&logo=redux&logoColor=white">
+</div>
+
+---
 
 ## 제작기간
 
--   1개월
+-   2개월
 
 ---
 
 ## 개발하게 된 이유
 
-평소 로또 당첨 번호를 보면서 내가 일일이 번호를 선택할 경우에 발생하는 뭘 선택해야 할 지에 대한
-고민을 하는 시간이 어려웠습니다. 거기에 로또 번호를 자동으로 선택할 경우에 숫자를 미리 확인하지
-못하는 점이 아쉽게 느껴졌습니다.
+평소 로또를 구매하면서 일일이 번호를 선택하는 것에 대한 어려움을 항상 가지고 있었습니다.
 
-그래서 6가지 로또 숫자 배열을 생성해내는 로직을 구현했습니다. 이를 통해 번호 선택에 대한 고민을 줄였고,
-자동으로 숫자를 뽑을 때 미리 숫자를 볼 수 있다는 느낌으로 고민했던 점을 구현했습니다.
+로또가 무작위 숫자를 조합하여 당첨이 된다는 것은 알고 있지만 그래도 사람인지라 거기서 법칙을
+찾아내어 숫자를 조합하는데 어느정도 도움이 되는 것이 있으면 좋겠다는 생각이 들었습니다.
 
-특정 조건에서 각각 다른 숫자 배열을 획득하고 이를 사용자가 선택하고 다시 조합하면서
-당첨 확률을 높이고자 하였습니다.
+그래서 생각한 것이 로또를 자동으로 구매할 때의 방식을 구현해서 개별적인 번호 조합이 아닌
+번호의 목록의 조합을 선택하는 방식을 택하여 로또 구매시 번호에 대한 고민을 조금 줄여보자는
+생각에 이 프로젝트를 개발하게 되었습니다.
 
-거기에 추가적으로 최근 당첨번호를 표시하고, 마지막에 추천번호 배열을 표시함으로써 생성 이외에
-추가적인 기능을 제공하였습니다.
+## 주요기능
+
+### 회차정보 표시
+
+-   기본적인 회차 정보 표시 - 날짜, 당첨금, 당첨번호, 다음 로또 구매까지 남은 시간 표시
+
+### 번호 추출 기능
+
+-   원하는 로직 및 게임 수 선택
+-   선택된 정보에 따라 생성된 로또 번호 목록 표시
+
+<p>
+  <img src="https://github.com/dongilpak/Lotto-Smithy/assets/96467200/f6569c0e-40e9-443b-a4ae-d7efe513a302">
+</p>
+
+### 번호 저장 및 삭제
+
+-   원하는 번호 목록 저장 및 삭제 가능
+-   필요에 따라 번호 목록 이미지 저장 가능(PC)
+-   모바일의 경우 저장 할 수 있게 이미지로 표시
+
+<p>
+  <img src="https://github.com/dongilpak/Lotto-Smithy/assets/96467200/a7c1943b-cc9e-4f9d-93a2-87faf380078e">
+</p>
+
+### 추천번호 목록
+
+-   6개의 로직 중 5개를 선택하여 표시, 새로고침 가능
 
 ---
 
